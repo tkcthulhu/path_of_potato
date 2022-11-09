@@ -11,7 +11,7 @@ def get_full_menu(request):
 
     for item in full_menu:
 
-        print(item)
+        print('Request made')
 
         JSON_data.append({
             'title': item.title,
