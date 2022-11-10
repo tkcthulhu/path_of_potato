@@ -5,7 +5,7 @@ from django.forms.models import model_to_dict
 # Create your views here.
 def get_full_menu(request):
 
-    full_menu = MenuItem.objects.all()
+    full_menu = MenuItem.objects.filter(stock=True)
 
     JSON_data = list()
 
@@ -16,7 +16,7 @@ def get_full_menu(request):
             'price': item.price,
             'description': item.description,
             'spicy_level': item.spicy_level,
-            'category': model_to_dict(Category.objects.get(id=item.category_id)),
+            'category': model_to_dict(Category.objects.get(id=item.category_id), fields=['title']),
             'cuisine': model_to_dict(Cuisine.objects.get(id=item.cuisine_id))  
             })
 

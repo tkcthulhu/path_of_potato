@@ -14,6 +14,7 @@ class MenuItem(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=200)
     price = models.FloatField()
+    stock = models.BooleanField()
     spicy_level = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE)

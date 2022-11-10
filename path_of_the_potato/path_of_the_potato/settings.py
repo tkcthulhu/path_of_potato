@@ -139,4 +139,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^https://.*\.gitpod\.io$",
+    r"^https://.*\.github\.io$",
 ]
+
+# CORS_ORIGIN_ALLOW_ALL = DEBUG
