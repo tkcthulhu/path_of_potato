@@ -11,8 +11,6 @@ def get_full_menu(request):
 
     for item in full_menu:
 
-        print('Request made')
-
         JSON_data.append({
             'title': item.title,
             'price': item.price,
@@ -22,4 +20,4 @@ def get_full_menu(request):
             'cuisine': model_to_dict(Cuisine.objects.get(id=item.cuisine_id))  
             })
 
-    return JsonResponse({'data': JSON_data})
+    return JsonResponse(JSON_data, safe=False)
