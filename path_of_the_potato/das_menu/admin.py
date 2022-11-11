@@ -29,10 +29,12 @@ class CustomMenuItem(ModelAdmin):
 
 admin.site.register( MenuItem, CustomMenuItem)
 
+# https://realpython.com/manage-users-in-django-admin/
+# https://docs.djangoproject.com/en/4.1/ref/contrib/admin/
+
 admin.site.unregister(User)
 
 @admin.register(User)
-
 class CustomUserAdmin(UserAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
