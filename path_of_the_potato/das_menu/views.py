@@ -17,7 +17,7 @@ def get_full_menu(request):
             'description': item.description,
             'spicy_level': item.spicy_level,
             'category': model_to_dict(Category.objects.get(id=item.category_id), fields=['title']),
-            'cuisine': model_to_dict(Cuisine.objects.get(id=item.cuisine_id))  
+            'cuisine': model_to_dict(Cuisine.objects.get(id=item.cuisine_id), fields=['title'])  
             })
 
     return JsonResponse(JSON_data, safe=False)
