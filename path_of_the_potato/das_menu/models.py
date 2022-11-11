@@ -20,6 +20,6 @@ class MenuItem(models.Model):
     cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'Name: {self.title}// Desc: {self.description}// Price: {self.price}// Spicyness: {self.spicy_level}// Category: {self.category}// Cuisine: {self.cuisine}'
+        return f'Name: {self.title}'
 
 # Create your models here.
